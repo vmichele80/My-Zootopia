@@ -16,13 +16,14 @@ def animals_cards(animals_data):
     for animal in animals_data:
         # append information to each string
         characteristics = animal["characteristics"]
-        output += "<li class='cards__item'>"
-        output += f"Name: {animal["name"]}<br/>\n"
-        output += f"Diet: {characteristics["diet"]}<br/>\n"
-        output += f"Location: {animal["locations"][0]}<br/>\n"
+        output += '<li class="cards__item">'
+        output += f'<div class="card__title"> {animal["name"]}</div>\n'
+        output += '<p class ="card__text" >'
+        output += f'<strong>Diet: </strong>{characteristics['diet']}<br/>\n'
+        output += f'<strong>Location: </strong>{animal["locations"][0]}<br/>\n'
         if "type" in characteristics:
-            output += f"Type: {characteristics["type"]}<br/>\n"
-        output += "</li>"
+            output += f'<strong>Type: </strong>{characteristics["type"]}<br/>\n'
+        output += '</p>\n</li>'
     return output
 
 def main():
